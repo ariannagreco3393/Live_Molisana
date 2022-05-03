@@ -10,6 +10,12 @@
     </header>
 </template>
 
+<script>
+export default {
+    name: 'headerComponent'
+}
+</script>
+
 <style lang="scss" scoped>
 header {
     text-align: center;

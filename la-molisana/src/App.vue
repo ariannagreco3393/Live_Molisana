@@ -1,31 +1,36 @@
 <template>
   <div id="app">
     <SiteHeader/>
-    <main>
-      <h1>lista</h1>
-    </main>
+    <SiteMain/>
     <SiteFooter/>
   </div>
 </template>
 
 <script>
 import SiteHeader from '@/components/headerComponent.vue'
+import SiteMain from '@/components/mainComponent.vue'
 import SiteFooter from '@/components/footerComponent.vue'
+
 
 export default {
   name: 'App',
   components: {
     SiteHeader,
-    SiteFooter
+    SiteFooter,
+    SiteMain
   }
 }
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+
+/* utility classes */
+@import '@/assets/sass/_common.scss';
+
+
+.text-center {
+  text-align: center;
 }
 
 #app {
@@ -41,20 +46,14 @@ main {
   background-image: url('@/assets/img/fondo-pag-speciali.jpg');
   background-size: cover;
   min-height: 50vh ;
+  padding-bottom: 2rem;
+
+  h1{
+    padding: 2rem 0;
+    text-align: center;
+  }
 }
 
-/* grid system */
-.container {
-  margin: auto;
-  max-width: 1440px;
-}
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col {
-  flex-grow: 1;
-}
+@import '@/assets/sass/_grid_system.scss'
 </style>
